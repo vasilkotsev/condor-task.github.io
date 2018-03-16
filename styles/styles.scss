@@ -1,0 +1,315 @@
+
+$main-font-family: "Tahoma";
+$logo-font-family: "Showcard Gothic";
+$main-font-color: #ffffff;
+
+@mixin default-divider-styles {
+    height: 0;
+    overflow: hidden;
+    margin: auto;
+}
+
+html {
+    font-size: 12px;
+}
+
+body {
+    font-family: $main-font-family;
+	font-weight: normal;
+	font-style: normal;
+    line-height: normal;
+    color: $main-font-color;
+}
+
+.main-wrapper {
+    width: 100%;
+    max-width: 1280px;
+    min-height: 1024px;
+    border: 1px solid #000000;
+}
+
+/* Logo styles */
+.logo {
+    display:inline-block;
+	font-family: $logo-font-family;
+	background: #066666;
+    font-size: 29px;
+    color: $main-font-color;
+    
+    &:hover {
+        text-decoration: none;
+        color: $main-font-color;
+    }
+
+    &--horizontal {
+        padding: 3px 13px 0 18px;
+        line-height: 29px;
+        margin-top: 15px;
+        margin-bottom: 28px;
+    }
+
+    &--vertical {
+        width: 31px;
+        word-wrap: break-word;
+        padding: 8px 6px;
+        line-height: 23px;
+        position: fixed;
+        top: 86px;
+        z-index: 1;
+    }	
+}
+
+/* Headder styles */
+#header {
+    background: #022929;
+    width: 100%;
+    max-width: 1152px;
+    min-height: 105px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    /* Navbar styles */
+    nav {
+        width: 100%;
+        max-width: 414px;
+        font-size: 14px;
+        font-weight: bold;
+        margin-left: 10px;
+
+        .navbar-nav {
+            width: 100%;
+
+            .nav-link:hover {
+                color: #16181b;
+            }
+        }
+
+        .dropdown-menu {
+            background: #066666;
+            border-radius: 0;
+            border: none;
+            top: 96%;
+            width: 148px;
+        }
+
+        .dropdown {
+            width: 100%;
+            max-width: 102px;
+            background: #066666;
+
+            & + .dropdown {
+                margin-left: 3px;
+            }
+
+            .dropdown-item {
+                height: 100%;
+                padding: 4px 9px;
+                white-space: pre-wrap; /* css-3 */    
+                white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+                white-space: -pre-wrap; /* Opera 4-6 */    
+                white-space: -o-pre-wrap; /* Opera 7 */    
+                word-wrap: break-word; /* Internet Explorer 5.5+ */
+                line-height: 1;
+                word-spacing: -2px;
+
+                &:hover {
+                    background: #022929;
+                }
+            }
+
+            .divider {
+                @include default-divider-styles;
+                border-top: 1px solid #83b3b3;
+                width: 94%;
+            }
+        }
+
+        a {
+            color: $main-font-color;
+        }
+    }
+}
+
+/* Main section styles*/
+#main {
+    max-width: 1152px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+
+    .article {
+        min-height: 836px;
+        padding: 14px 9px;
+        background: #1e3a3a;
+        border: 10px solid #066666;
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 11px;
+            margin-left: 19px;
+        }  
+        
+        p {
+            text-indent: 36px;
+            padding: 0 15px 18px;
+        }
+        
+        .article-divider {
+            @include default-divider-styles;
+            border-top: 1px solid #000000;
+            border-bottom: 1px solid #616f6f;
+            margin-bottom: 14px;    
+        }
+    }
+
+    aside {
+        font-size: 16px;
+        background: #022929;
+        border: 10px solid #055252;
+        padding: 12px;
+
+        .aside-content-wrapper {
+            width: 100%;
+            max-width: 307px;
+            margin: 0 auto;
+        }
+
+        p {
+            text-transform: uppercase;
+            margin-bottom: 17px;
+        }
+
+        .socials {
+            margin-bottom: 31px;
+
+            a { 
+                display: inline-block;
+                text-decoration: none;
+
+                & + a {
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        ul {
+            margin: -6px 0 21px;
+            a {
+                font-family: Verdana;
+                text-decoration: underline;
+                color: $main-font-color;
+            }
+
+        }
+    }
+
+    /*Carousel custom styles */
+
+    #aside-carousel {
+        background-color: grey;
+        margin-bottom: 20px;
+
+        .carousel-indicators {
+            bottom: -14px;
+
+            li {
+                min-height: 3px;
+                max-width: 3px;
+            }
+        }  
+    }
+
+
+}
+
+/* Footer styles */
+#footer {
+    width: 100%;
+    max-width: 1152px;
+    margin: 0 auto;
+    background: #066666;
+    padding: 0px 20px 13px;
+    margin-bottom: 10px;
+    font-size: 14px;
+
+    .copyrights {
+        display: inline-block;
+        margin: 12px 0 0;
+    }
+
+    .footer-menu {
+        margin: 12px 0 0;
+
+        li {
+            display: inline-block;
+            margin-left: 5px;
+
+            a {
+                color: $main-font-color;
+                text-decoration: underline;
+                padding: 5px;
+
+                &:hover {
+                    color: #022929;
+                }
+            }
+        }
+    }   
+}
+
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+
+    html {
+        font-size: 11px;
+    }
+
+    .logo {
+        &--vertical {
+            display: none;
+        }
+    }
+
+    #header {
+
+        nav {
+            background: #066666;
+            font-size: 1.1818rem;
+            font-weight: bold;
+            margin-left: 0;
+            max-width: 100%;
+
+            .dropdown-menu {
+                border: 1px solid rgba(0,0,0,.15);
+                text-indent: 6%;
+                width: 100%;
+            }
+
+            .dropdown {
+                max-width: 100%;
+            }
+
+        }
+    }
+
+    #main { 
+        .article { 
+            h1 {
+                font-size: 3.2727rem;
+            }
+        }
+
+        .sidebar {
+            font-size: 1.2727rem;
+        }
+    }
+
+    #footer {
+        font-size: 1.1818rem;
+
+        .footer-menu {
+            line-height: 2.8;
+        }
+    }
+}
