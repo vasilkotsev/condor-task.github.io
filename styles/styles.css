@@ -188,7 +188,7 @@ body {
         color: #ffffff; }
   #main #aside-carousel {
     background-color: grey;
-    margin-bottom: 20px; }
+    margin: 20px 0; }
     #main #aside-carousel .carousel-indicators {
       bottom: -14px; }
       #main #aside-carousel .carousel-indicators li {
