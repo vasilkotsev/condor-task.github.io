@@ -11,6 +11,10 @@ $main-font-color: #ffffff;
 
 html {
     font-size: 12px;
+    
+    @media (max-width: 768px) {
+        font-size: 11px;
+    }
 }
 
 body {
@@ -56,6 +60,10 @@ body {
         position: fixed;
         top: 86px;
         z-index: 1;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
     }	
 }
 
@@ -72,11 +80,19 @@ body {
     /* Navbar styles */
     nav {
         width: 100%;
-        max-width: 414px;
         font-size: 14px;
         font-weight: bold;
         margin-left: 10px;
 
+        @media (max-width: 768px) {
+            background: #066666;
+            font-size: 1.1818rem;
+            font-weight: bold;
+            margin-left: 0;
+            min-height: 30px;
+            max-width: 100%;
+        }
+    
         .navbar-nav {
             width: 100%;
 
@@ -91,15 +107,25 @@ body {
             border: none;
             top: 96%;
             width: 148px;
+
+            @media (max-width: 768px) {
+                border: 1px solid rgba(0,0,0,.15);
+                text-indent: 6%;
+                width: 100%;
+            }
         }
 
-        .dropdown {
+        .nav-item {
             width: 100%;
             max-width: 102px;
             background: #066666;
 
-            & + .dropdown {
-                margin-left: 3px;
+            @media (max-width: 768px) {
+                max-width: 100%;
+            }
+
+            & + .nav-item {
+                margin-left: 2px;
             }
 
             .dropdown-item {
@@ -137,17 +163,32 @@ body {
     margin: 0 auto;
     margin-bottom: 10px;
 
-    .article {
+    .article-container {
         min-height: 836px;
         padding: 14px 9px;
         background: #1e3a3a;
         border: 10px solid #066666;
 
-        h1 {
-            font-size: 48px;
+        h1, h2 {
             margin-bottom: 11px;
             margin-left: 19px;
+        }
+
+        h1 {
+            font-size: 48px;
+
+            @media (max-width: 768px) {
+                font-size: 3.2727rem;
+            }
         }  
+
+        h2 {
+            font-size: 38px;
+
+            @media (max-width: 768px) {
+                font-size: 2.8rem;
+            }
+        }
         
         p {
             text-indent: 36px;
@@ -160,13 +201,30 @@ body {
             border-bottom: 1px solid #616f6f;
             margin-bottom: 14px;    
         }
+
+        .index {
+            display: block;
+        }
+
+        .second-article,
+        .first-action-dropdown, 
+        .second-action-dropdown, 
+        .third-action-dropdown {
+            display: none;
+        }
     }
 
-    aside {
+    
+
+    .sidebar {
         font-size: 16px;
         background: #022929;
         border: 10px solid #055252;
         padding: 12px;
+
+        @media (max-width: 768px) {
+            font-size: 1.2727rem;
+        }
 
         .aside-content-wrapper {
             width: 100%;
@@ -232,6 +290,10 @@ body {
     margin-bottom: 10px;
     font-size: 14px;
 
+    @media (max-width: 768px) {
+        font-size: 1.1818rem;
+    }
+
     .copyrights {
         display: inline-block;
         margin: 12px 0 0;
@@ -239,6 +301,10 @@ body {
 
     .footer-menu {
         margin: 12px 0 0;
+
+        @media (max-width: 768px) {
+            line-height: 2.8;
+        }
 
         li {
             display: inline-block;
@@ -255,61 +321,4 @@ body {
             }
         }
     }   
-}
-
-
-/* Media queries */
-@media screen and (max-width: 768px) {
-
-    html {
-        font-size: 11px;
-    }
-
-    .logo {
-        &--vertical {
-            display: none;
-        }
-    }
-
-    #header {
-
-        nav {
-            background: #066666;
-            font-size: 1.1818rem;
-            font-weight: bold;
-            margin-left: 0;
-            max-width: 100%;
-
-            .dropdown-menu {
-                border: 1px solid rgba(0,0,0,.15);
-                text-indent: 6%;
-                width: 100%;
-            }
-
-            .dropdown {
-                max-width: 100%;
-            }
-
-        }
-    }
-
-    #main { 
-        .article { 
-            h1 {
-                font-size: 3.2727rem;
-            }
-        }
-
-        .sidebar {
-            font-size: 1.2727rem;
-        }
-    }
-
-    #footer {
-        font-size: 1.1818rem;
-
-        .footer-menu {
-            line-height: 2.8;
-        }
-    }
 }
